@@ -32,3 +32,11 @@ yarn-error.log*
 
 # vercel
 .vercel
+.idea/modules.xml
+.idea/travel-dashboard.iml
+.idea/vcs.xml
+.gitignore
+.idea/codeStyles/codeStyleConfig.xml
+.gitignore
+.idea/inspectionProfiles/Project_Default.xml
+.idea/codeStyles/Project.xml
