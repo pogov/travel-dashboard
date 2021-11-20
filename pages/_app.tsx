@@ -9,7 +9,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'IBM Plex Sans', sans-serif;
-  background-color: #F6F7FB;
+  background-color: #FFFFFF;
   ;
 }
 a {
@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
-      </ThemeProvider> 
+      </ThemeProvider>
     </>
   )
 }

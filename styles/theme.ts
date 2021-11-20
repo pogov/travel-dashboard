@@ -6,6 +6,8 @@ export type ThemeType = {
       orange: string,
       background: string,
       surfGreen: string,
+      black: string,
+      iconGray: string
     },
     breakPoints: {
       tablet: string,
@@ -23,7 +25,7 @@ const size = {
   laptopL: '1440px',
   desktop: '2560px'
 }
-  
+
 export const theme: ThemeType = {
     colors: {
       lightGray: "#7987A5",
@@ -32,6 +34,8 @@ export const theme: ThemeType = {
       orange: "#F86549",
       background: "#F6F7FB",
       surfGreen: "#34A59F",
+      black: "#000000",
+      iconGray: '#9BAAD3'
     },
     breakPoints: {
       tablet: `(min-width: ${size.tablet})`,
