@@ -11,7 +11,7 @@ export const BookmarkBackground = styled.div<BookmarkProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ff6647;
+  background-color: ${({theme}) => theme.colors.orange};
   border-radius: 50%;
   border: 2px solid #ffffff;
   box-shadow: 0 4px 4px 0 rgba(255, 102, 71, 0.25);

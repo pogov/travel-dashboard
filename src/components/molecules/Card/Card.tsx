@@ -4,11 +4,13 @@ import styled from 'styled-components';
 import Bookmark from '../../atoms/Bookmark/Bookmark';
 import Price from '../../atoms/Price/Price';
 import Location from '../../atoms/Location/Location';
-import CardHeader from '../../atoms/CardHeader/CardHeader';
+import Heading from '../../atoms/Heading/Heading';
 
 const CardWrapper = styled.div`
   height: 260px;
+  min-height: 260px;
   width: 290px;
+  min-width: 290px;
   border-radius: 25px;
   background-color: #ffffff;
   box-shadow: 0px 100px 80px rgba(153, 165, 236, 0.05), 0px 64.8148px 46.8519px rgba(153, 165, 236, 0.037963),
@@ -18,6 +20,7 @@ const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 5px;
+  scroll-snap-align: center;
 `;
 
 const ImageWrapper = styled.div<{ src: string }>`
@@ -35,20 +38,20 @@ const InfoBox = styled.div`
   justify-content: space-between;
 `;
 
-interface Props {
+export interface CardProps {
   imageUrl: any;
   location: string;
   price: string;
   title: string;
 }
 
-const Card: React.FC<Props> = ({ imageUrl, location, price, title }) => {
+const Card: React.FC<CardProps> = ({ imageUrl, location, price, title }) => {
   return (
     <CardWrapper>
       <ImageWrapper src={imageUrl}>
         <Bookmark size="small" />
       </ImageWrapper>
-      <CardHeader>{title}</CardHeader>
+      <Heading as="h3" margin="no-margin">{title}</Heading>
       <InfoBox>
         <Location>{location}</Location>
         <Price>{price}</Price>

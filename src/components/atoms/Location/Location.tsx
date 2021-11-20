@@ -7,8 +7,8 @@ const LocationWrapper = styled.div`
 `;
 
 const LocationLabel = styled.p`
-  color: #353646;
-  opacity: 0.4;
+  color: ${({theme}) => theme.colors.lightGray};
+  opacity: 0.5;
   padding-left: 8px;
   margin: 0px;
 `;

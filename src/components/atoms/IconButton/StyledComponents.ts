@@ -11,12 +11,12 @@ export const Button = styled.button<{active?: boolean}>`
   border: none;
 
   & svg {
-      fill: #9BAAD3;
+    fill: ${({theme}) => theme.colors.iconGray}
   }
 
   ${({active}) => (
       active && css`
-        background-color: #FF6647;
+        background-color: ${({theme}) => theme.colors.orange};
         position: relative;
         overflow: hidden;
         box-shadow: 0px 10px 20px rgba(88, 92, 229, 0.25);

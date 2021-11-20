@@ -1,12 +1,14 @@
+import { useState } from 'react';
 import Search from '../../atoms/Search/Search';
 import { FilterIcon } from '../../../icons/Icons';
 import styled from 'styled-components';
 
 const IconWrapper = styled.div`
+  min-width: 52px;
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background-color: #f86549;
+  background-color: ${({theme}) => theme.colors.orange};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +23,7 @@ const IconWrapper = styled.div`
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background-color: #f86549;
+    background-color: ${({theme}) => theme.colors.orange};
     filter: blur(28px);
     z-index: -1;
   }
@@ -32,13 +34,16 @@ const SearchBarWrapper = styled.div`
     align-items: center;
 `;
 
-const SearchBar: React.FC = () => (
-  <SearchBarWrapper>
-    <Search />
-    <IconWrapper>
-      <FilterIcon />
-    </IconWrapper>
-  </SearchBarWrapper>
-);
+const SearchBar: React.FC = () => {
+  const [active, setActive] = useState(false);
+  return (
+    <SearchBarWrapper>
+      <Search active={active} />
+      <IconWrapper onClick={() => setActive(prev => !prev)}>
+        <FilterIcon />
+      </IconWrapper>
+    </SearchBarWrapper>
+  );
+}
 
 export default SearchBar;

@@ -10,12 +10,11 @@ const StyledInput = styled.input`
     font-size: 15px;
     font-weight: 400;
     &::placeholder {
-        color: #AFAFAF;
+        color: ${({theme}) => theme.colors.lightGray};
     }
 `;
 
-const InputWrapper = styled.div`
-    display: flex;
+const InputWrapper = styled.div<{active: boolean}>`
     align-items: center;
     height: 52px;
     width: 326px;
@@ -23,11 +22,19 @@ const InputWrapper = styled.div`
     padding: 14px;
     border: none;
     background-color: #ffffff;
-    box-shadow: 0px 24px 24px rgba(0, 0, 0, 0.02);
+    box-shadow: 0 24px 24px rgba(0, 0, 0, 0.02);
+    display: ${({active}) => active ? "flex" : "none"};
+    @media ${({theme}) => theme.breakPoints.tablet} {
+      display: flex;
+    }
 `;
 
-const Search: React.FC = () => (
-    <InputWrapper>
+interface Props {
+  active: boolean;
+}
+
+const Search: React.FC<Props> = ({ active }) => (
+    <InputWrapper active={active}>
         <SearchIcon />
         <StyledInput placeholder="Search" />
     </InputWrapper>

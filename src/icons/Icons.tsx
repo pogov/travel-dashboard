@@ -121,3 +121,32 @@ export const FilterIcon = () => (
     />
   </svg>
 );
+
+export const MenuIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line y1="1.25" x2="18" y2="1.25" stroke="#F6F7FB" strokeWidth="1.5" />
+    <line y1="7.25" x2="18" y2="7.25" stroke="#F6F7FB" strokeWidth="1.5" />
+    <line y1="13.25" x2="9" y2="13.25" stroke="#F6F7FB" strokeWidth="1.5" />
+  </svg>
+);
+
+export const CloseIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" fill="none">
+    <path d="M0.948063 8.01911L3.96717 5L0.948062 1.98089L1.98091 0.94804L5.00002 3.96715L8.01913 0.94804L9.05198 1.98089L6.03288 5L9.05198 8.01911L8.01913 9.05196L5.00002 6.03285L1.98092 9.05196L0.948063 8.01911Z" />
+  </svg>
+);
+
+export const OvalIndicatorIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="100" viewBox="0 0 25 137" fill="none">
+    <mask id="mask0_1:191" maskUnits="userSpaceOnUse" x="0" y="0" width="25" height="100" fill="white">
+      <rect width="25" height="100" />
+    </mask>
+    <g mask="url(#mask0_1:191)">
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M0 15.6667C0 12.9053 -2.23858 10.6667 -5 10.6667V10.6667C-7.76142 10.6667 -10 12.9053 -10 15.6667V45.2021C-10 53.2309 -15 60.9713 -15 69.0001V69.0001V69.0001C-15 77.0289 -10 84.7692 -10 92.798V127.333C-10 130.095 -7.76142 132.333 -5 132.333V132.333C-2.23858 132.333 0 130.095 0 127.333V107.563C0 94.5495 15 82.0135 15 69.0001V69.0001C15 68.3591 14.9598 67.7275 14.8818 67.1077C13.3873 55.2353 0 44.2996 0 32.3334V15.6667Z"
+      />
+    </g>
+  </svg>
+);
