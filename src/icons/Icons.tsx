@@ -150,3 +150,9 @@ export const OvalIndicatorIcon = () => (
     </g>
   </svg>
 );
+
+export const DarkModeIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <circle cx="12" cy="12" r="10" fill="none" strokeWidth="2px" stroke="black"/>
+  </svg>
+);

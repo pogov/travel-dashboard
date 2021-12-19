@@ -1,15 +1,14 @@
 import SearchBar from '../SearchBar/SearchBar';
-import styled from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 import { MenuIcon } from '../../../icons/Icons';
 import Heading from '../../atoms/Heading/Heading';
-import { theme } from '../../../../styles/theme';
 import { Dispatch, SetStateAction } from 'react';
 
 
 const HeaderWrapper = styled.div`
   background-color: ${({theme}) => theme.colors.background};
-  display: flex;
   align-items: center;
+  display: flex;
 `;
 
 const MenuButtonContainer = styled.div`
@@ -20,7 +19,7 @@ const MenuButtonContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media ${theme.breakPoints.tablet} {
+  @media ${({theme}) => theme.breakPoints.tablet} {
     width: 15vw;
     height: 15vw;
   }
@@ -40,6 +39,8 @@ interface Props {
 }
 
 export const Header: React.FC<Props> = ({ menuOpen }) => {
+  const theme = useTheme();
+
   return (
     <HeaderWrapper>
       <MenuButtonContainer onClick={() => menuOpen(true)}>

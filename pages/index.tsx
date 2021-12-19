@@ -1,53 +1,60 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import CardSlider from '../src/components/organisms/CardSlider/CardSlider'
-import { CardProps } from '../src/components/molecules/Card/Card'
+import Head from 'next/head';
+import Image from 'next/image';
+import CardSlider from '../src/components/organisms/CardSlider/CardSlider';
+import { CardProps } from '../src/components/molecules/Card/Card';
 import { Main } from '../src/components/templates/Main';
 import { GridContainer, GridItem } from '../styles/grid/Grid';
 
-
-const cards: CardProps[] = [
+const fakeCardsData: CardProps[] = [
   {
-    imageUrl: "https://www.backpackeninazie.nl/wp-content/uploads/2012/11/Koh-Phi-Phi-1.jpg",
-    location: "Thailand",
-    price: "$1,480",
-    title: "Phi Phi Islands",
+    imageUrl: 'https://www.backpackeninazie.nl/wp-content/uploads/2012/11/Koh-Phi-Phi-1.jpg',
+    location: 'Thailand',
+    price: '$1,480',
+    title: 'Phi Phi Islands'
   },
   {
-    imageUrl: "https://media.hrs.com/media/image/8d/e4/14/Kandima_Maldives-Kudahuvadhoo-Aussenansicht-907859_600x600.jpg",
-    location: "Maldives",
-    price: "$1,480",
-    title: "Kudahuvadhoo Island",
+    imageUrl:
+      'https://media.hrs.com/media/image/8d/e4/14/Kandima_Maldives-Kudahuvadhoo-Aussenansicht-907859_600x600.jpg',
+    location: 'Maldives',
+    price: '$1,480',
+    title: 'Kudahuvadhoo Island'
   },
   {
-    imageUrl: "https://www.backpackeninazie.nl/wp-content/uploads/2012/11/Koh-Phi-Phi-1.jpg",
-    location: "Thailand",
-    price: "$1,480",
-    title: "Phi Phi Islands",
+    imageUrl: 'https://www.backpackeninazie.nl/wp-content/uploads/2012/11/Koh-Phi-Phi-1.jpg',
+    location: 'Thailand',
+    price: '$1,480',
+    title: 'Phi Phi Islands'
   },
   {
-    imageUrl: "https://media.hrs.com/media/image/8d/e4/14/Kandima_Maldives-Kudahuvadhoo-Aussenansicht-907859_600x600.jpg",
-    location: "Maldives",
-    price: "$1,480",
-    title: "Kudahuvadhoo Island",
+    imageUrl:
+      'https://media.hrs.com/media/image/8d/e4/14/Kandima_Maldives-Kudahuvadhoo-Aussenansicht-907859_600x600.jpg',
+    location: 'Maldives',
+    price: '$1,480',
+    title: 'Kudahuvadhoo Island'
   },
   {
-    imageUrl: "https://media.hrs.com/media/image/8d/e4/14/Kandima_Maldives-Kudahuvadhoo-Aussenansicht-907859_600x600.jpg",
-    location: "Maldives",
-    price: "$1,480",
-    title: "Kudahuvadhoo Island",
+    imageUrl:
+      'https://media.hrs.com/media/image/8d/e4/14/Kandima_Maldives-Kudahuvadhoo-Aussenansicht-907859_600x600.jpg',
+    location: 'Maldives',
+    price: '$1,480',
+    title: 'Kudahuvadhoo Island'
   },
   {
-    imageUrl: "https://media.hrs.com/media/image/8d/e4/14/Kandima_Maldives-Kudahuvadhoo-Aussenansicht-907859_600x600.jpg",
-    location: "Maldives",
-    price: "$1,480",
-    title: "Kudahuvadhoo Island",
+    imageUrl:
+      'https://media.hrs.com/media/image/8d/e4/14/Kandima_Maldives-Kudahuvadhoo-Aussenansicht-907859_600x600.jpg',
+    location: 'Maldives',
+    price: '$1,480',
+    title: 'Kudahuvadhoo Island'
   }
-]
+];
 
 const options = ['America', 'Sights', 'Europe'];
 
-export default function Home() {
+interface Props {
+  toggleMode: () => 'light' | 'dark';
+}
+
+const Home: React.FC<Props> = ({ toggleMode }) => {
   return (
     <div>
       <Head>
@@ -60,16 +67,19 @@ export default function Home() {
         <Main>
           <GridContainer cols={2} rows={2}>
             <GridItem span={2}>
-              <CardSlider cards={cards} options={options}/>
+              <CardSlider cards={fakeCardsData} options={options} />
             </GridItem>
           </GridContainer>
-          <div>second </div>
+          <div>
+            {/* TODO - remove this button */}
+            <button onClick={toggleMode}>darkMode</button>
+          </div>
         </Main>
       </main>
 
-      <footer>
-        
-      </footer>
+      <footer></footer>
     </div>
-  )
-}
+  );
+};
+
+export default Home;

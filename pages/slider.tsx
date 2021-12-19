@@ -38,8 +38,10 @@ const cards: CardProps[] = [
       price: "$1,480",
       title: "Kudahuvadhoo Island",
     }
-  ]
+  ];
+
+const options = ['America', 'Sights', 'Europe'];
 
 export default function Slider () {
-    return <CardSlider cards={cards}/>
+    return <CardSlider cards={cards} options={options}/>
 };

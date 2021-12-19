@@ -1,7 +1,8 @@
 import {createGlobalStyle, ThemeProvider} from 'styled-components'
 import type { AppProps } from 'next/app'
 import './_app.css'
-import { theme } from '../styles/theme';
+import { createTheme } from '../styles/theme';
+import useDarkMode from '../src/hooks/useDarkMode';
 
 const GlobalStyle = createGlobalStyle`
 html,
@@ -23,11 +24,13 @@ a {
 `;
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const { theme, toggleMode } = useDarkMode();
+  
   return (
     <>
       <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+      <ThemeProvider theme={createTheme(theme)}>
+        <Component {...pageProps} toggleMode={toggleMode}/>
       </ThemeProvider>
     </>
   )
